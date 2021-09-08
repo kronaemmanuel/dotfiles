@@ -100,7 +100,7 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'mattn/emmet-vim'
 
 " Coc
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Fzf
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -111,6 +111,11 @@ Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'yuezk/vim-js'
+
+" Coq.nvim
+Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
+" 9000+ Snippets
+Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
 
 call plug#end()
 
@@ -147,10 +152,10 @@ nnoremap <leader>gj :diffget //3<CR>
 nnoremap <leader>gf :diffget //2<CR>
 
 " Coc remaps
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-nnoremap <C-a> :CocAction<CR>
+" inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" nnoremap <C-a> :CocAction<CR>
 
 " Only run coc-prettier and coc-eslint if relevant .rc files are present in
 " the folder
@@ -163,7 +168,7 @@ nnoremap <C-a> :CocAction<CR>
 " endif
 
 " Make a Prettier command to format with prettier
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
+" command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 " Remove trailing whitespace autocommand
 fun! TrimWhitespace()
