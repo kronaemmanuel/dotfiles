@@ -71,7 +71,7 @@ Plug 'mbbill/undotree'
 Plug 'kyazdani42/nvim-web-devicons'
 
 " File Explorer
-Plug 'preservim/nerdtree'
+" Plug 'preservim/nerdtree'
 
 " Airline
 Plug 'vim-airline/vim-airline'
@@ -117,6 +117,9 @@ Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
 " 9000+ Snippets
 Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
 
+" Chadtree replaces NerdTree
+Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
+
 call plug#end()
 
 " Colorscheme
@@ -133,7 +136,7 @@ nnoremap <C-p> <cmd>Telescope find_files<cr>
 nnoremap <C-f> <cmd>Telescope live_grep<cr>
 
 " Open File Explorer
-nnoremap <C-n> :NERDTreeToggle<CR>
+nnoremap <C-n> :CHADopen<CR>
 
 " Airling settings
 let g:airline_theme = 'embark'
