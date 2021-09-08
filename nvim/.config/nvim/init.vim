@@ -170,6 +170,13 @@ nnoremap <leader>gf :diffget //2<CR>
 " Make a Prettier command to format with prettier
 " command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
+" LSP
+lua << EOF
+require'lspconfig'.html.setup{}
+require'lspconfig'.tailwindcss.setup{}
+require'lspconfig'.tsserver.setup{}
+EOF
+
 " Remove trailing whitespace autocommand
 fun! TrimWhitespace()
   let l:save = winsaveview()
