@@ -24,3 +24,16 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 # Add z to jump around
 . ~/builds/z/z.sh
+
+alias la="ls -a"
+if [ -e /home/krona/.nix-profile/etc/profile.d/nix.sh ]; then . /home/krona/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+# Node version manager
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# android studio
+export ANDROID_SDK=/home/krona/Android/Sdk
+export PATH=/home/krona/Android/Sdk/platform-tools:$PATH
+

@@ -71,7 +71,7 @@ Plug 'mbbill/undotree'
 Plug 'kyazdani42/nvim-web-devicons'
 
 " File Explorer
-" Plug 'preservim/nerdtree'
+Plug 'preservim/nerdtree'
 
 " Airline
 Plug 'vim-airline/vim-airline'
@@ -100,7 +100,7 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'mattn/emmet-vim'
 
 " Coc
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Fzf
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -113,12 +113,12 @@ Plug 'maxmellon/vim-jsx-pretty'
 Plug 'yuezk/vim-js'
 
 " Coq.nvim
-Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
+" Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
 " 9000+ Snippets
-Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
+" Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
 
 " Chadtree replaces NerdTree
-Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
+" Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
 
 call plug#end()
 
@@ -136,7 +136,7 @@ nnoremap <C-p> <cmd>Telescope find_files<cr>
 nnoremap <C-f> <cmd>Telescope live_grep<cr>
 
 " Open File Explorer
-nnoremap <C-n> :CHADopen<CR>
+nnoremap <C-n> :NERDTreeToggle<CR>
 
 " Airling settings
 let g:airline_theme = 'embark'
@@ -155,9 +155,9 @@ nnoremap <leader>gj :diffget //3<CR>
 nnoremap <leader>gf :diffget //2<CR>
 
 " Coc remaps
-" inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-" inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 " nnoremap <C-a> :CocAction<CR>
 
 " Only run coc-prettier and coc-eslint if relevant .rc files are present in
@@ -171,14 +171,14 @@ nnoremap <leader>gf :diffget //2<CR>
 " endif
 
 " Make a Prettier command to format with prettier
-" command! -nargs=0 Prettier :CocCommand prettier.formatFile
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 " LSP
-lua << EOF
-require'lspconfig'.html.setup{}
-require'lspconfig'.tailwindcss.setup{}
-require'lspconfig'.tsserver.setup{}
-EOF
+" lua << EOF
+" require'lspconfig'.html.setup{}
+" require'lspconfig'.tailwindcss.setup{}
+" require'lspconfig'.tsserver.setup{}
+" EOF
 
 " Remove trailing whitespace autocommand
 fun! TrimWhitespace()
