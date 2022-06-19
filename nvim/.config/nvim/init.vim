@@ -154,6 +154,9 @@ nnoremap <leader>gc :G commit<CR>
 nnoremap <leader>gj :diffget //3<CR>
 nnoremap <leader>gf :diffget //2<CR>
 
+" Coc node path
+let g:coc_node_path = '/home/krona/.nvm/versions/node/v18.4.0/bin/node'
+
 " Coc remaps
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
